@@ -4,7 +4,6 @@ const SortSelect = (props) => {
   const selectRef = useRef("");
 
   const shuffle = () => {
-    console.log(selectRef);
     selectRef.current.value = "";
     props.onShuffle();
   };
@@ -16,8 +15,11 @@ const SortSelect = (props) => {
           -- Select --
         </option>
         <option value="default"> Default Sort </option>
-        <option value="quicksort"> Quick Sort </option>
         <option value="bubblesort"> Bubble Sort </option>
+        <option value="selectionsort"> Selection Sort </option>
+        <option value="mergesort"> Merge Sort </option>
+        <option value="quicksort"> Quick Sort </option>
+        <option value="insertionsort"> Insertion Sort </option>
       </select>
       <button onClick={shuffle}> Shuffle </button>
       Time: {props.time.toFixed(4)} milliseconds

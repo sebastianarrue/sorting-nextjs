@@ -6,6 +6,9 @@ import SortSelect from "../components/SortSelect";
 import { useEffect, useState } from "react";
 import quickSort from "../services/Quicksort";
 import bubbleSort from "../services/BubbleSort";
+import selectionSort from "../services/SelectionSort";
+import mergeSort from "../services/MergeSort";
+import insertionSort from "../services/InsertionSort";
 
 export default function Home(props) {
   const [universities, setUniversities] = useState([]);
@@ -16,7 +19,7 @@ export default function Home(props) {
   }, [props.universities]);
 
   const sortSelected = (event) => {
-    const cloned = universities.slice();
+    let cloned = universities.slice();
     let startTime = performance.now();
     switch (event.target.value) {
       case "quicksort":
@@ -24,6 +27,15 @@ export default function Home(props) {
         break;
       case "bubblesort":
         bubbleSort(cloned);
+        break;
+      case "selectionsort":
+        selectionSort(cloned);
+        break;
+      case "mergesort":
+        cloned = mergeSort(cloned);
+        break;
+      case "insertionsort":
+        insertionSort(cloned);
         break;
       default:
         cloned.sort((a, b) => a.name.localeCompare(b.name));
