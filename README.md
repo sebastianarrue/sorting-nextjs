@@ -14,6 +14,6 @@ https://sebhastian.com/merge-sort-javascript/#:~:text=The%20mergeSort()%20functi
 
 https://en.wikipedia.org/wiki/Quicksort
 
-## insertion Sort
+## Insertion Sort
 
 https://www.geeksforgeeks.org/insertion-sort/
